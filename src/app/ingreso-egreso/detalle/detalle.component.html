@@ -7,23 +7,23 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Descripción</th>
-                    <th>Monto</th>
-                    <th>Tipo</th>
-                    <th></th>
+                    <th style="text-align: center;">Descripción</th>
+                    <th style="text-align: center;">Monto</th>
+                    <th style="text-align: center;">Tipo</th>
+                    <th style="text-align: center;"></th>
                 </tr>
                 </thead>
 
                 <tbody>
                     <tr *ngFor="let item of items | ordenIe">
-                        <td>{{ item.descripcion }}</td>
-                        <td>{{ item.monto | currency }}</td>
-                        <td>
+                        <td style="text-align: left;">{{ item.descripcion }}</td>
+                        <td style="text-align: right;">{{ item.monto | currency:'S/. ' }}</td>
+                        <td style="text-align: center;">
                             <span [ngClass]="{'text-success': item.tipo === 'ingreso', 'text-danger': item.tipo === 'egreso'}">
                                 {{ item.tipo }}
                             </span>
                         </td>
-                        <td>
+                        <td style="text-align: center;">
                             <button class="btn btn-danger" (click)="BorrarItem(item.uid)">
                                 <i class="fa fa-trash"></i>
                                 Borrar
